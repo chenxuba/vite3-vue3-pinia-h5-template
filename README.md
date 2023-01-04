@@ -1,4 +1,4 @@
-# vite3-vue3-pinia-h5-template
+# vite3-vue3-pinia-ts-h5-template
 
 基于 vue3 + vite3 + （nutui or varlet or vant） + sass + viewport 适配方案 + axios 封装，构建手机端模板脚手架
 
