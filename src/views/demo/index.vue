@@ -33,6 +33,7 @@
   <section>
     <div :class="['btn-add', i18n.global.locale]"></div>
   </section>
+
 </template>
 
 <script setup name="DemoPage">
