@@ -2,7 +2,7 @@
 
 基于 vue3 + vite3 + （nutui or varlet or vant） + sass + viewport 适配方案 + axios 封装，构建手机端模板脚手架
 
-# 在原作者基础上完善了配置【反向代理】【axios封装】【api封装】
+### 在原作者基础上完善了配置【反向代理】【axios封装】【api封装】
 
 可直接用于实战项目开发
 
