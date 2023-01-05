@@ -3,7 +3,7 @@
     <nut-avatar
       class="avatar"
       size="large"
-      icon="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
+      icon="http://erkong.ybc365.com/pic/16728848319498.jpeg"
     />
     <div class="member-detail">
       <p class="nickname" style="display: flex;align-items: center;"> 昵称  
@@ -59,4 +59,5 @@
       }
     }
   }
+
 </style>
