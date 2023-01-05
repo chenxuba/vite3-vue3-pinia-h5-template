@@ -4,15 +4,17 @@ export interface ReqParams {
 }
 
 export interface ReqAuth {
-  _id: string
-  username: string
-  password: string
-  nickname: string
-  avatar: string
-  huixinCode: string
-  paiyipai: string
-  date: string
-  __v: number
+  data: {
+    _id: string
+    username: string
+    password: string
+    nickname: string
+    avatar: string
+    huixinCode: string
+    paiyipai: string
+    date: string
+    __v: number
+  }
 }
 
 export interface ResResult {

@@ -6,7 +6,7 @@ import router from '/@/router';
 import store from '/@/store';
 import './assets/font/iconfont.css';
 import './assets/app.css';
-
+import './permission'
 const app = createApp(App);
 
 // 路由

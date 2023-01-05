@@ -17,11 +17,11 @@ import { get, post } from '/@/utils/useAxiosApi';
 
 enum URL {
   login = '/api/login',
-  getUserInfo = '/v1/user/permission',
+  getUserInfo = '/api/getInfo',
 }
 
 const loginPassword = async (data: ReqParams) => post<ResResult>({ url: URL.login, data });
 
-const getUserInfo = async () => get<ReqAuth>({ url: URL.getUserInfo });
+const getUserInfo = async () => post<ReqAuth>({ url: URL.getUserInfo });
 
 export default { loginPassword, getUserInfo };

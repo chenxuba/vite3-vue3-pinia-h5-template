@@ -4,23 +4,22 @@ import { defineStore } from 'pinia';
 import { ReqParams } from '/@/api/user/model';
 const { VITE_TOKEN_KEY } = import.meta.env;
 const token = useCookies().get(VITE_TOKEN_KEY as string);
-console.log(token);
 
 interface StoreUser {
   token: string;
-  info: Record<any, any>;
+  info: string;
 }
 
 export const useUserStore = defineStore({
   id: 'app-user',
   state: (): StoreUser => ({
     token: token,
-    info: {},
+    info: "",
   }),
   getters: {
-    getUserInfo(): any {
-      return this.info || {};
-    },
+    // getUserInfo(): any {
+    //   return this.info || {};
+    // },
   },
   actions: {
     setInfo(info: any) {
@@ -30,12 +29,18 @@ export const useUserStore = defineStore({
       const res = await fetchApi.loginPassword(params);
       if (res) {
         // save token
-        console.log(res);
+        // console.log(res);
         this.token = res.token
         useCookies().set(VITE_TOKEN_KEY as string, res.token);
       }
       return res;
     },
+   async getUserInfo(){
+      const res = await fetchApi.getUserInfo()
+      if(res){
+        this.setInfo(res.data)
+      }
+    }
   },
   // persist: {
   //   key: 'token',

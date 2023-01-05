@@ -22,7 +22,7 @@ instance.interceptors.request.use(
       config.headers = {
         ...config.headers,
         // Authorization: `Bearer ${token}`
-        Authorization: token
+        token: token
       };
     }
     return config;
