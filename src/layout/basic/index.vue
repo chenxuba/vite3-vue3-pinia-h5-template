@@ -12,7 +12,14 @@
     </RouterView>
     <RouterView v-if="!$route.meta.keepAlive" :key="$route.path" />
   </div>
-  <nut-tabbar unactive-color="#364636" active-color="#1989fa" @tab-switch="tabSwitch" bottom v-model:visible="activeTab">
+  <nut-tabbar
+    safe-area-inset-bottom
+    unactive-color="#364636"
+    active-color="#1989fa"
+    @tab-switch="tabSwitch"
+    bottom
+    v-model:visible="activeTab"
+  >
     <nut-tabbar-item v-for="item in tabItem" :key="item.key" :tab-title="$t(`tabbar.${item.key}`)" :num="0" :icon="item.icon" />
   </nut-tabbar>
 </template>
@@ -65,5 +72,7 @@
     height: calc(100vh - 200px);
     overflow-y: scroll;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: none;
   }
 </style>

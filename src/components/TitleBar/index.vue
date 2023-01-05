@@ -39,6 +39,8 @@
     height: calc(100vh - 50px);
     overflow-y: scroll;
     overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    -webkit-text-size-adjust: none;
   }
 
   .tabbar {
