@@ -13,7 +13,8 @@
 
 
 import { ReqAuth, ReqParams, ResResult } from './model';
-import { get, post } from '/@/utils/useAxiosApi';
+// import { get, post } from '/@/utils/useAxiosApi';
+import {  post } from '/@/utils/useAxiosApi';
 
 enum URL {
   login = '/api/login',
