@@ -2,6 +2,7 @@ import fetchApi from '../../api/user';
 import { useCookies } from '@vueuse/integrations/useCookies';
 import { defineStore } from 'pinia';
 import { ReqParams } from '/@/api/user/model';
+import { removeToken } from '/@/utils/auth';
 const { VITE_TOKEN_KEY } = import.meta.env;
 const token = useCookies().get(VITE_TOKEN_KEY as string);
 
@@ -35,11 +36,16 @@ export const useUserStore = defineStore({
       }
       return res;
     },
-   async getUserInfo(){
+    async getUserInfo() {
       const res = await fetchApi.getUserInfo()
-      if(res){
+      if (res) {
         this.setInfo(res.data)
       }
+    },
+    async logout(){
+      this.info = ''
+      removeToken()
+      return 'ok'
     }
   },
   // persist: {

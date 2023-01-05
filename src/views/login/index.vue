@@ -10,6 +10,7 @@
       </nut-form-item>
       <nut-button block type="info" @click="submit"> 登录 </nut-button>
     </nut-form>
+    <h4 style="text-align: center;line-height: 4;">账号密码 admin/123456  ； 123/123</h4>
   </div>
 </template>
 
