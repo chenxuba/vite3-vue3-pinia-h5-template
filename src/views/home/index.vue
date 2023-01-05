@@ -1,22 +1,22 @@
 <template>
   <header class="header">
-    <img src="https://cdn.jsdelivr.net/gh/fonghehe/picture/vue-h5-template/logo.png" /><span> {{ $t('title') }}</span>
+    <span> {{ $t('title') }}</span>
   </header>
   <div class="intro-header">
     <div>{{ $t('introduction') }}</div>
-    <a href="https://github.com/sunniejs/vue-h5-template.git">
+    <a href="https://github.com/chenxuba/vite3-vue3-pinia-h5-template.git">
       <nut-icon name="github" />
     </a>
   </div>
   <nut-cell-group :title="$t('home.support')" class="supportList">
     <nut-cell v-for="(item, index) in cellList" :key="index" :title="item" icon="Check" />
   </nut-cell-group>
-  <nut-cell-group :title="$t('home.cssMultiLanguage')" class="supportList">
-    <nut-cell>
+  <nut-cell-group style="text-align: center;" :title="$t('home.cssMultiLanguage')" class="supportList">
+    <nut-cell style="display: flex;justify-content: center;">
       <div :class="['btn-confirm', locale]"></div>
     </nut-cell>
   </nut-cell-group>
-  <div class="btn-wrap">
+  <div class="btn-wrap" style="display: flex;justify-content: center;">
     <nut-button shape="square" size="small" type="default" @click="changeLang('zh-cn')">
       {{ $t('language.zh') }}
     </nut-button>

@@ -17,9 +17,9 @@ export const useUserStore = defineStore({
     info: "",
   }),
   getters: {
-    // getUserInfo(): any {
-    //   return this.info || {};
-    // },
+    getUserInfoFun(): any {
+      return this.info || {};
+    },
   },
   actions: {
     setInfo(info: any) {

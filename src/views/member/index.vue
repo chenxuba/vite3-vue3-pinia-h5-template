@@ -6,7 +6,9 @@
       icon="https://img12.360buyimg.com/imagetools/jfs/t1/143702/31/16654/116794/5fc6f541Edebf8a57/4138097748889987.png"
     />
     <div class="member-detail">
-      <p class="nickname"> 昵称<nut-button shape="square" size="small" type="default" @click="goLogin"> 去登录 </nut-button> </p>
+      <p class="nickname" style="display: flex;align-items: center;"> 昵称  
+        <nut-button v-if="getUserInfo" shape="square" size="small" type="default"> {{getUserInfo}} </nut-button>
+        <nut-button v-if="!getUserInfo" shape="square" size="small" type="default" @click="goLogin"> 去登录 </nut-button> </p>
       <p class="info"> 个人其他信息，后续补充.... </p>
     </div>
   </div>
@@ -23,15 +25,15 @@
 </template>
 
 <script lang="ts" setup name="MemberPage">
-  // import { useUserStore } from '@/store/modules/user';
+  import { useUserStore } from '/@/store/modules/user';
   import { useRouter } from 'vue-router';
 
   const router = useRouter();
-  // const userStore = useUserStore();
-  // const getUserInfo = computed(() => {
-  //   const { name = '' } = userStore.getUserInfo || {};
-  //   return name;
-  // });
+  const userStore = useUserStore();
+  const getUserInfo = computed(() => {
+    const { nickname = '' } = userStore.getUserInfoFun || {};
+    return nickname;
+  });
   const goLogin = () => {
     router.push('/login');
   };
