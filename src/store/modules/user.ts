@@ -4,6 +4,7 @@ import { defineStore } from 'pinia';
 import { ReqParams } from '/@/api/user/model';
 const { VITE_TOKEN_KEY } = import.meta.env;
 const token = useCookies().get(VITE_TOKEN_KEY as string);
+console.log(token);
 
 interface StoreUser {
   token: string;
@@ -30,15 +31,17 @@ export const useUserStore = defineStore({
       if (res) {
         // save token
         console.log(res);
+        this.token = res.token
+        useCookies().set(VITE_TOKEN_KEY as string, res.token);
       }
       return res;
     },
   },
-  persist: {
-    key: 'token',
-    storage: localStorage,
-    paths: ['token'],
-  },
+  // persist: {
+  //   key: 'token',
+  //   storage: localStorage,
+  //   paths: ['token'],
+  // },
 });
 // export const useUserStore = defineStore('app-user', () => {
 //   const Token = ref(token);

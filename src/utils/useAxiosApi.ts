@@ -1,6 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { API_PREFIX, API_TARGET_URL } from '../../build/constant';
 import { Toast } from '@nutui/nutui';
+import { useUserStore } from '../store/modules/user';
 // baseURL
 const BASE_URL = import.meta.env.MODE === 'development' ? API_PREFIX : API_TARGET_URL;
 // create an axios instance
@@ -14,16 +15,16 @@ const instance = axios.create({
 instance.interceptors.request.use(
   (config) => {
     // do something before request is sent
-    // const token = store.state.user.token;
-
-    // if (token) {
-    //   // let each request carry token
-    //   config.headers = {
-    //     ...config.headers,
-    //     Authorization: `Bearer ${token}`
-    //   };
-    // }
-
+    const store = useUserStore()
+    const token = store.token;
+    if (token) {
+      // let each request carry token
+      config.headers = {
+        ...config.headers,
+        // Authorization: `Bearer ${token}`
+        Authorization: token
+      };
+    }
     return config;
   },
   (error) => {
