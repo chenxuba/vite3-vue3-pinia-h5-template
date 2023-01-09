@@ -1,5 +1,5 @@
-import { useCookies } from "@vueuse/integrations/useCookies";
-const { VITE_TOKEN_KEY } = import.meta.env;
+import { useCookies } from '@vueuse/integrations/useCookies';
+import { VITE_TOKEN_KEY } from '../../build/constant';
 
 export function getToken() {
   return useCookies().get(VITE_TOKEN_KEY as string) || '';
