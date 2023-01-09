@@ -15,7 +15,7 @@ export const useUserStore = defineStore({
   id: 'app-user',
   state: (): StoreUser => ({
     token: token,
-    info: "",
+    info: '',
   }),
   getters: {
     getUserInfoFun(): any {
@@ -31,22 +31,22 @@ export const useUserStore = defineStore({
       if (res) {
         // save token
         // console.log(res);
-        this.token = res.token
+        this.token = res.token;
         useCookies().set(VITE_TOKEN_KEY as string, res.token);
       }
       return res;
     },
     async getUserInfo() {
-      const res = await fetchApi.getUserInfo()
+      const res = await fetchApi.getUserInfo();
       if (res) {
-        this.setInfo(res.data)
+        this.setInfo(res.data);
       }
     },
-    async logout(){
-      this.info = ''
-      removeToken()
-      return 'ok'
-    }
+    async logout() {
+      this.info = '';
+      removeToken();
+      return 'ok';
+    },
   },
   // persist: {
   //   key: 'token',

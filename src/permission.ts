@@ -11,7 +11,7 @@ const whiteList = ['/login']; // no redirect whitelist
 
 router.beforeEach(async (to: any, _from, next) => {
   // set page title
-  //  document.title = getPageTitle(to.meta.title) //设置网页标题
+  document.title = to.meta.title; //设置网页标题
   const hasToken = getToken();
   if (hasToken) {
     // 已登录
@@ -19,8 +19,8 @@ router.beforeEach(async (to: any, _from, next) => {
       next({ path: '/' });
     } else {
       //是否获取过用户信息
-      const store = useUserStore()
-      const hasGetUserInfo = store.info //获取vuex中的name
+      const store = useUserStore();
+      const hasGetUserInfo = store.info; //获取vuex中的name
       if (hasGetUserInfo) {
         next();
       } else {
