@@ -3,7 +3,8 @@ import { useCookies } from '@vueuse/integrations/useCookies';
 import { defineStore } from 'pinia';
 import { ReqParams } from '/@/api/user/model';
 import { removeToken } from '/@/utils/auth';
-const { VITE_TOKEN_KEY } = import.meta.env;
+// const { VITE_TOKEN_KEY } = import.meta.env;
+import { VITE_TOKEN_KEY } from '../../../build/constant';
 const token = useCookies().get(VITE_TOKEN_KEY as string);
 
 interface StoreUser {
