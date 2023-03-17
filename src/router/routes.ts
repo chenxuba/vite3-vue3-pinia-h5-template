@@ -43,7 +43,7 @@ const routes = [
     path: '/login',
     component: () => import('/@/views/login/index.vue'),
     meta: {
-      title: '',
+      title: '登录',
       keepAlive: true,
     },
   },
