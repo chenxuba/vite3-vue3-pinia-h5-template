@@ -8,7 +8,7 @@ const routes = [
         path: 'home',
         component: () => import('/@/views/home/index.vue'),
         meta: {
-          title: 'tabbar.home',
+          title: '首页',
           keepAlive: true,
         },
       },
@@ -16,7 +16,7 @@ const routes = [
         path: 'list',
         component: () => import('/@/views/list/index.vue'),
         meta: {
-          title: 'tabbar.list',
+          title: '列表',
           keepAlive: true,
         },
       },
@@ -24,7 +24,7 @@ const routes = [
         path: 'member',
         component: () => import('/@/views/member/index.vue'),
         meta: {
-          title: 'tabbar.member',
+          title: '我的',
           keepAlive: true,
         },
       },
@@ -32,7 +32,7 @@ const routes = [
         path: 'demo',
         component: () => import('/@/views/demo/index.vue'),
         meta: {
-          title: 'tabbar.demo',
+          title: '示例',
           keepAlive: true,
         },
       },
