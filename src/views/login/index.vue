@@ -5,7 +5,7 @@
       <nut-form-item required prop="username" :rules="[{ required: true, message: '请输入用户名' }]">
         <input v-model="formData.username" class="nut-input-text" placeholder="请输入用户名" type="text" />
       </nut-form-item>
-      <nut-form-item required prop="password" :rules="[{ required: true, message: '请填写联系电话' }]">
+      <nut-form-item required prop="password" :rules="[{ required: true, message: '请填写密码' }]">
         <input v-model="formData.password" class="nut-input-text" placeholder="请输入密码" type="password" />
       </nut-form-item>
       <br />
@@ -16,7 +16,7 @@
     <h4 style="text-align: center; line-height: 1; transform: scale(1)">
       <a style="text-decoration: underline" href="https://github.com/chenxuba/vite3-vue3-pinia-h5-template.git">github地址</a>
     </h4>
-    <div style="display: flex; justify-content: center">
+    <div style="display: flex; justify-content: space-around">
       <div>
         <h4 style="text-align: center; line-height: 4">作者微信</h4>
         <div style="text-align: center">
@@ -63,6 +63,16 @@
 <style scoped lang="scss">
   .login {
     padding: 20px;
+    color: #fff;
+    background: url('https://img2.baidu.com/it/u=2151917160,2261808597&fm=253&fmt=auto&app=138&f=JPG?w=500&h=1000');
+
+    // background-size: 100% 100%;
+    ::v-deep .nut-cell-group__warp {
+      background-color: transparent;
+    }
+    ::v-deep .nut-form-item::before {
+      bottom: 12px;
+    }
 
     h2 {
       text-align: center;
