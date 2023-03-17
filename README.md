@@ -12,6 +12,8 @@
 
 如果对你有帮助送我一颗珍贵的小星星（づ￣ 3 ￣）づ ╭❤ ～
 
+# 安装依赖使用 yarn 安装 尽量避免使用cnpm 会出现诡异的bug
+
 # 修改反向代理地址，打开 build/constant.ts 文件，修改 API_TARGET_URL
 
 # 打包上线会自动读取 API_TARGET_URL 为线上 baseUrl
