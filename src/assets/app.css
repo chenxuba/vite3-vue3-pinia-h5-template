@@ -9,3 +9,5 @@ h6,
 p {
   margin: 0;
 }
+/* 用于 mobile-to-multi-displays 识别，用于桌面端和横屏居中 */
+.root-class {}
